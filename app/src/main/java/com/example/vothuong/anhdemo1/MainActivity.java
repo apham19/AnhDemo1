@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         bt3 = (ImageButton) findViewById(R.id.bt3);
         initialListener();
     }
+
     private void initialListener(){
         bt1.setOnClickListener(new View.OnClickListener(){
            @Override
