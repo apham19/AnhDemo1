@@ -10,22 +10,26 @@ import android.widget.TextView;
 
 import com.example.vothuong.anhdemo1.R;
 
+import java.util.ArrayList;
+
 
 public class ListViewAdapter extends BaseAdapter {
 
     private final LayoutInflater nInflater;
+    private final ArrayList<String> listResult;
     private Context nContext;
 
 
 
-    public ListViewAdapter(Context context){
-        nContext = context;
+    public ListViewAdapter(Context context, ArrayList<String> listResult){
+        this.nContext = context;
+        this.listResult = listResult;
         nInflater= (LayoutInflater) nContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return 100;
+        return listResult.size();
     }
 
     @Override
@@ -53,6 +57,7 @@ public class ListViewAdapter extends BaseAdapter {
         }
         holder.textView1.setText(String.valueOf(position));
         holder.textView3.setText(String.valueOf(position));
+        //holder.textView2.setText(listResult.size());
         if(position %2 == 0){
             holder.textView1.setVisibility(View.VISIBLE);
             holder.textView3.setVisibility(View.INVISIBLE);
