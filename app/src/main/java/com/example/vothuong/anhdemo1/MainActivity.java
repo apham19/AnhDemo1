@@ -1,18 +1,15 @@
 package com.example.vothuong.anhdemo1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.BaseAdapter;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
+import com.example.vothuong.anhdemo1.activity.toA_Activity;
 import com.example.vothuong.anhdemo1.bean.Book;
 import com.example.vothuong.anhdemo1.util.UtilLog;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -22,12 +19,18 @@ public class MainActivity extends BaseActivity {
     private ImageButton bt1;
     private ImageButton bt3;
 
+
     @OnClick(R.id.bt2)
     void button2Click(){
         Intent intent = new Intent(this, DialogActivity.class);
         startActivityForResult(intent, 2);
     }
 
+    @OnClick (R.id.start_activity)
+    void button_act_Click(){
+        Intent intent = new Intent(this, toA_Activity.class);
+        startActivityForResult(intent, 4);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,7 @@ public class MainActivity extends BaseActivity {
 
             }
         });
+
     }
 
     @Override

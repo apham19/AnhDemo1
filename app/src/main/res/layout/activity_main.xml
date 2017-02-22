@@ -33,6 +33,7 @@
             android:layout_centerVertical="true"/>
 
         <ImageButton
+            android:id="@+id/start_activity"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginRight="12dp"

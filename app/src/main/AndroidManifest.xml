@@ -18,8 +18,14 @@
         </activity>
         <activity android:name=".ListViewActivity" />
         <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".BaseActivity"/>
-        <activity android:name=".DialogActivity"></activity>
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".DialogActivity" />
+        <activity
+            android:name=".activity.toA_Activity"
+            android:launchMode="standard" />
+        <activity android:name=".activity.toB_Activity" />
+        <activity android:name=".activity.toC_Activity" />
+        <activity android:name=".activity.toD_Activity"></activity>
     </application>
 
 </manifest>

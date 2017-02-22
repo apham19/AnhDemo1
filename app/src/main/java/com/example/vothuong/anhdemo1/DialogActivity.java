@@ -108,9 +108,8 @@ public class DialogActivity extends BaseActivity {
                     }
                 }
                 progressDialog.cancel();
-                toastShort("Download Success");
             }
-        });
+        }).start();
     }
 
     ProgressDialog waitingDialog;
@@ -159,7 +158,7 @@ public class DialogActivity extends BaseActivity {
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                toastShort("You clicked Cancel");
+                toastLong("You clicked Cancel");
             }
         });
         builder.show();
@@ -179,7 +178,7 @@ public class DialogActivity extends BaseActivity {
             }
 
         });
-
+        builder.show();
     }
 
     private void normalDialog() {
@@ -227,7 +226,7 @@ public class DialogActivity extends BaseActivity {
         final String[] items = {"item1", "item2", "item3", "item4"};
         final boolean initChoiceSets[] = {false, false, false, false};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("I'm a List Dialog");
+        builder.setTitle("I'm a Single Choice Dialog");
         builder.setIcon(R.mipmap.ic_launcher);
         builder.setSingleChoiceItems(items, choice, new DialogInterface.OnClickListener() {
             @Override
@@ -236,7 +235,15 @@ public class DialogActivity extends BaseActivity {
             }
 
         });
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                toastShort("You clicked: " + choice);
+            }
+        });
+        builder.show();
     }
+
 }
 
 

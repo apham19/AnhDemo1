@@ -1,23 +1,31 @@
 package com.example.vothuong.anhdemo1;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
+import android.widget.AbsListView.LayoutParams;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.vothuong.anhdemo1.Adapter.ListViewAdapter;
+import com.example.vothuong.anhdemo1.Adapter.ViewPagerAdapter;
+import com.example.vothuong.anhdemo1.fragment.Page1_Fragment;
+import com.example.vothuong.anhdemo1.fragment.Page2_Fragment;
+import com.example.vothuong.anhdemo1.fragment.Page3_Fragment;
 
 import java.util.ArrayList;
 
 public class ListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
     private ListView listView;
     private ArrayList<String> listResult;
+    private ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();
+    private ViewPager listViewHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +59,14 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
     private void initialView(){
         listView = (ListView) findViewById(R.id.list_view);
         View view = getLayoutInflater().inflate(R.layout.list_view_header,null);
-        LinearLayout listViewHeader = (LinearLayout) view.findViewById(R.id.list_view_header);
+        listViewHeader = (ViewPager) view.findViewById(R.id.list_view_widget);
         ListViewAdapter listViewAdapter = new ListViewAdapter(this, listResult);
+        fragmentList.add(new Page1_Fragment());
+        fragmentList.add(new Page2_Fragment());
+        fragmentList.add(new Page3_Fragment());
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this.getSupportFragmentManager());
+        viewPagerAdapter.setContent(fragmentList);
+        listViewHeader.setAdapter(viewPagerAdapter);
         listView.addHeaderView(listViewHeader);
 
         TextView tv = new TextView(this);

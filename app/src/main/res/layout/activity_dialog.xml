@@ -12,59 +12,59 @@
         <RadioButton
             android:id="@+id/rb1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="left|center_vertical"
             android:text="Normal_dialog"/>
         <RadioButton
             android:id="@+id/rb2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="left|center_vertical"
             android:text="List_dialog"/>
         <RadioButton
             android:id="@+id/rb3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="left|center_vertical"
             android:text="Single_Choice_dialog"/>
         <RadioButton
             android:id="@+id/rb4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="left|center_vertical"
             android:text="Multiple_Choice_dialog"/>
         <RadioButton
             android:id="@+id/rb5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="left|center_vertical"
             android:text="Waiting_dialog"/>
         <RadioButton
             android:id="@+id/rb6"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="left|center_vertical"
             android:text="Progress_dialog"/>
         <RadioButton
             android:id="@+id/rb7"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="left|center_vertical"
-            android:text="Normal_dialog"/>
+            android:text="Input_dialog"/>
         <RadioButton
             android:id="@+id/rb8"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="left|center_vertical"
-            android:text="Normal_dialog"/>
+            android:text="Custom_dialog"/>
     </RadioGroup>
 
     <Button
