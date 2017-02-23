@@ -23,9 +23,12 @@
         <activity
             android:name=".activity.toA_Activity"
             android:launchMode="standard" />
-        <activity android:name=".activity.toB_Activity" />
-        <activity android:name=".activity.toC_Activity" />
-        <activity android:name=".activity.toD_Activity"></activity>
+        <activity android:name=".activity.toB_Activity"
+            android:launchMode="singleTop"/>
+        <activity android:name=".activity.toC_Activity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".activity.toD_Activity"
+            android:launchMode="singleInstance"></activity>
     </application>
 
 </manifest>
