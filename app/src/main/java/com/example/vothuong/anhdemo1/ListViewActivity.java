@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AbsListView.LayoutParams;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +26,8 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
     private ListView listView;
     private ArrayList<String> listResult;
     private ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();
-    private ViewPager listViewHeader;
+    private LinearLayout listViewHeader;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,16 +59,17 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
     }
 
     private void initialView(){
+        viewPager = (ViewPager) findViewById(R.id.list_view_widget);
         listView = (ListView) findViewById(R.id.list_view);
         View view = getLayoutInflater().inflate(R.layout.list_view_header,null);
-        listViewHeader = (ViewPager) view.findViewById(R.id.list_view_widget);
+        listViewHeader = (LinearLayout) view.findViewById(R.id.list_view_header);
         ListViewAdapter listViewAdapter = new ListViewAdapter(this, listResult);
         fragmentList.add(new Page1_Fragment());
         fragmentList.add(new Page2_Fragment());
         fragmentList.add(new Page3_Fragment());
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this.getSupportFragmentManager());
         viewPagerAdapter.setContent(fragmentList);
-        listViewHeader.setAdapter(viewPagerAdapter);
+        viewPager.setAdapter(viewPagerAdapter);
         listView.addHeaderView(listViewHeader);
 
         TextView tv = new TextView(this);
