@@ -6,8 +6,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.vothuong.anhdemo1.activity.AnimatorActivity;
+import com.example.vothuong.anhdemo1.activity.TimerActivity;
 import com.example.vothuong.anhdemo1.activity.toA_Activity;
 import com.example.vothuong.anhdemo1.bean.Book;
+import com.example.vothuong.anhdemo1.dialog.CustomDialog;
+import com.example.vothuong.anhdemo1.dialog.Main_Custom_Dialog;
 import com.example.vothuong.anhdemo1.util.UtilLog;
 
 import butterknife.ButterKnife;
@@ -18,18 +22,52 @@ public class MainActivity extends BaseActivity {
 
     private ImageButton bt1;
     private ImageButton bt3;
+    private ImageButton bt_act;
+
+
+    @OnClick(R.id.custom)
+    void customClick(){
+        CustomDialogMain();
+    }
+
+    private void CustomDialogMain() {
+        Main_Custom_Dialog dialog = new Main_Custom_Dialog(this, new Main_Custom_Dialog.ICustomDialogEventListener(){
+
+            @Override
+            public void OnClickListener() {
+                Intent intent = new Intent();
+                intent.putExtra("message","Dialog");
+                setResult(RESULT_OK,intent);
+            }
+
+            @Override
+            public void OnCancelClickListener() {
+
+            }
+        });
+        dialog.show();
+    }
+
+
+
+    @OnClick(R.id.timer)
+    void buttonTimerClick(){
+        Intent intent = new Intent(this, TimerActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.animation)
+    void buttonAnimationClick(){
+        Intent intent = new Intent(this, TimerActivity.class);
+        startActivity(intent);
+    }
+
 
 
     @OnClick(R.id.bt2)
     void button2Click(){
         Intent intent = new Intent(this, DialogActivity.class);
         startActivityForResult(intent, 2);
-    }
-
-    @OnClick (R.id.start_activity)
-    void button_act_Click(){
-        Intent intent = new Intent(this, toA_Activity.class);
-        startActivityForResult(intent, 4);
     }
 
     @Override
@@ -44,8 +82,11 @@ public class MainActivity extends BaseActivity {
     private void initialView(){
         bt1 = (ImageButton) findViewById(R.id.bt1);
         bt3 = (ImageButton) findViewById(R.id.bt3);
+        bt_act = (ImageButton) findViewById(R.id.start_activity);
 
     }
+
+
 
     @Override
     protected void onStart() {
@@ -77,6 +118,24 @@ public class MainActivity extends BaseActivity {
                 startActivityForResult(intent, 3);
 
             }
+        });
+        bt_act.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                toActivity(toA_Activity.class);
+
+
+            }
+
+        });
+        bt_act.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                toActivity(AnimatorActivity.class);
+
+
+            }
+
         });
 
     }

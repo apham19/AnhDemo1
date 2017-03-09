@@ -9,6 +9,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AbsListView.LayoutParams;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,11 @@ import com.example.vothuong.anhdemo1.Adapter.ViewPagerAdapter;
 import com.example.vothuong.anhdemo1.fragment.Page1_Fragment;
 import com.example.vothuong.anhdemo1.fragment.Page2_Fragment;
 import com.example.vothuong.anhdemo1.fragment.Page3_Fragment;
+import com.example.vothuong.anhdemo1.fragment.Page4_Fragment;
+import com.example.vothuong.anhdemo1.fragment.Page5_Fragment;
+import com.example.vothuong.anhdemo1.fragment.Page6_Fragment;
+import com.example.vothuong.anhdemo1.fragment.Page7_Fragment;
+import com.example.vothuong.anhdemo1.fragment.Page8_Fragment;
 
 import java.util.ArrayList;
 
@@ -25,7 +32,7 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
     private ListView listView;
     private ArrayList<String> listResult;
     private ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();
-    private ViewPager listViewHeader;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +66,9 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
     private void initialView(){
         listView = (ListView) findViewById(R.id.list_view);
         View view = getLayoutInflater().inflate(R.layout.list_view_header,null);
-        listViewHeader = (ViewPager) view.findViewById(R.id.list_view_widget);
+
+        LinearLayout listViewHeader = (LinearLayout) view.findViewById(R.id.list_view_header);
         ListViewAdapter listViewAdapter = new ListViewAdapter(this, listResult);
-        fragmentList.add(new Page1_Fragment());
-        fragmentList.add(new Page2_Fragment());
-        fragmentList.add(new Page3_Fragment());
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this.getSupportFragmentManager());
-        viewPagerAdapter.setContent(fragmentList);
-        listViewHeader.setAdapter(viewPagerAdapter);
         listView.addHeaderView(listViewHeader);
 
         TextView tv = new TextView(this);
@@ -75,7 +77,20 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
         tv.setGravity(Gravity.CENTER);
         listView.addFooterView(tv);
 
+        viewPager = (ViewPager) findViewById(R.id.list_view_widget);
 
+        fragmentList.add(new Page1_Fragment());
+        fragmentList.add(new Page2_Fragment());
+        fragmentList.add(new Page3_Fragment());
+        fragmentList.add(new Page4_Fragment());
+        fragmentList.add(new Page5_Fragment());
+        fragmentList.add(new Page6_Fragment());
+        fragmentList.add(new Page7_Fragment());
+        fragmentList.add(new Page8_Fragment());
+
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this.getSupportFragmentManager());
+        viewPagerAdapter.setContent(fragmentList);
+        viewPager.setAdapter(viewPagerAdapter);
         listView.setAdapter(listViewAdapter);
         listView.setOnItemClickListener(this);
     }

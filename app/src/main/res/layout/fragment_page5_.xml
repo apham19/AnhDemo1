@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vothuong.anhdemo1.fragment.Page3_Fragment">
+    tools:context="com.example.vothuong.anhdemo1.fragment.Page5_Fragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@mipmap/page_3"
+        android:src="@mipmap/page_5"
         android:scaleType="fitCenter"/>
 
 </FrameLayout>

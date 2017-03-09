@@ -3,39 +3,63 @@ package com.example.vothuong.anhdemo1.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
+import com.example.vothuong.anhdemo1.BaseActivity;
 import com.example.vothuong.anhdemo1.R;
 
 import butterknife.OnClick;
 
-public class toD_Activity extends AppCompatActivity {
+public class toD_Activity extends BaseActivity {
+
+    private ImageButton toA;
+    private ImageButton toB;
+    private ImageButton toC;
+    private ImageButton toD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_d_);
-    }
-    @OnClick(R.id.to_A)
-    void to_A_Click(){
-        Intent intent = new Intent(this, toA_Activity.class);
-        startActivityForResult(intent, 1);
+        initialButtons();
+        initialListener();
     }
 
-    @OnClick (R.id.to_B)
-    void to_B_Click(){
-        Intent intent = new Intent(this, toB_Activity.class);
-        startActivityForResult(intent, 2);
+    private void initialListener() {
+        toA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toActivity(toA_Activity.class);
+            }
+        });
+
+        toB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toActivity(toB_Activity.class);
+            }
+        });
+
+        toC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toActivity(toC_Activity.class);
+            }
+        });
+
+        toD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toActivity(toD_Activity.class);
+            }
+        });
     }
 
-    @OnClick (R.id.to_C)
-    void to_C_Click(){
-        Intent intent = new Intent(this, toC_Activity.class);
-        startActivityForResult(intent, 3);
-    }
-
-    @OnClick (R.id.to_D)
-    void to_D_Click(){
-        Intent intent = new Intent(this, toD_Activity.class);
-        startActivityForResult(intent, 4);
+    private void initialButtons() {
+        toA = (ImageButton) findViewById(R.id.to_A);
+        toB = (ImageButton) findViewById(R.id.to_B);
+        toC = (ImageButton) findViewById(R.id.to_C);
+        toD = (ImageButton) findViewById(R.id.to_D);
     }
 }

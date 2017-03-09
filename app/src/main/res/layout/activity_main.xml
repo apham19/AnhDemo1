@@ -75,14 +75,61 @@
             android:background="@color/white"/>
 
     </LinearLayout>
-
-    <ListView
-        android:layout_above="@id/title_bar"
-        android:layout_below="@id/tool_bar"
+    
+    <FrameLayout
+        android:layout_below="@id/title_bar"
+        android:layout_above="@id/tool_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white">
-    </ListView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/timer"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:text="Timer"
+                android:textAllCaps="false" android:textSize="15sp"></Button>
+            <Button
+                android:id="@+id/animation"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:text="Animation"
+                android:textAllCaps="false" android:textSize="15sp"></Button>
+            <Button
+                android:id="@+id/animator"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:text="Animator"
+                android:textAllCaps="false" android:textSize="15sp"></Button>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:layout_margin="3dp">
+
+            <Button
+                android:id="@+id/custom"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:text="Custom"
+                android:textAllCaps="false" android:textSize="15sp"></Button>
+
+        </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
 
 
 </RelativeLayout>

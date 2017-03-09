@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_animation_"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vothuong.anhdemo1.activity.Animation_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true">
+        <Button
+            android:id="@+id/alpha"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="alpha"
+            android:textAllCaps="false"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/scale"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="scale"
+            android:textAllCaps="false"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/rotate"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="rotate"
+            android:textAllCaps="false"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/trans"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="trans"
+            android:textAllCaps="false"
+            android:gravity="center" />
+        <Button
+            android:id="@+id/set"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="set"
+            android:textAllCaps="false"
+            android:gravity="center" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/animation_tv"
+        android:layout_width="300dp"
+        android:layout_height="300dp" />
+</RelativeLayout>
