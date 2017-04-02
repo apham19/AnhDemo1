@@ -136,6 +136,125 @@
         </LinearLayout>
     </FrameLayout>
 
+    <LinearLayout
+        android:id="@+id/listOfActivity"
+        android:layout_width="325dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar"
+        android:background="@android:color/black"
+        android:layout_marginLeft="-325dp"
+        android:paddingLeft="10dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/p_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="ViewPager Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/p_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Dialog Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/p_ListView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="ListView Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/p_Animation"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Animation"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/p_Animator"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Animator"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/p_timer"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Timer Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/p_toA"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="A Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/p_toB"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="B Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/p_toC"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="C Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/p_toD"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="D Activity"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
 
 </RelativeLayout>
 

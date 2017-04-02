@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListViewActivity" />
+        <activity android:name=".ListViewActivity"
+            android:label="ListViewActivity"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".DialogActivity" />
